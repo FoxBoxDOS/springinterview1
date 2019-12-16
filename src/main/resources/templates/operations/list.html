@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="springapp">
+    <table class="table table-bordered table-hover horizontal-align">
+        <thead>
+        <tr>
+            <!--  <th style="width: 5%">#</th>-->
+              <th style="width: 45%">firstname</th>
+              <th style="width: 40%">lastname</th>
+              <th style="width: 5%">Edit</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="human : ${humans}">
+             <!-- <td th:text="${human.id}" style="text-align: center">#</td>-->
+              <td th:text="${human.firstname}">firstname</td>
+              <td th:text="${human.lastname}">lastname</td>
+
+              <td style="text-align: center"><a th:href="@{'/edit/{id}'(id=${human.id})}"><i class="fa fa-edit" style="font-size:20px"></i></a></td>
+          </tr>
+          </tbody>
+      </table>
+  </div>
+  </html>
